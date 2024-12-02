@@ -1,0 +1,87 @@
+.user_adder_logo_with_name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+h1, h2, h3, h4 {
+    font-family: Montserrat, sans-serif;
+    margin-top: 0;
+    line-height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: 500;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user_adder_logo_with_name_logo{
+    box-sizing: border-box;
+}
+.user_adder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+    height: 800px;
+    margin-top: 40px;
+    margin-right: 100px;
+}
+.user_adder_logo_with_name_name h1{
+    font-size: 40px;
+}
+form {
+    display: grid;  
+    flex-direction: column;          /* Используем flexbox для выстраивания элементов в строку */
+    justify-content: center; /* Равномерное распределение пространства */
+    align-items: center;      /* Центрируем элементы по вертикали */
+    gap: 40px;
+          /* Интервал между строками */
+}
+.user_adder_form_input{
+    display: flex;
+    gap: 30px;
+}
+form h3 {
+    margin: 0;                /* Убираем внешние отступы у заголовка */
+    text-align: right;        /* Выравниваем текст по правому краю */
+    width: 320px;             /* Задаем ширину для выравнивания */
+}
+.user_adder_form_input{
+    display: flex;
+    align-items: center;
+}
+.user_adder_form_input input, .user_adder_form_input select{
+    width: 800px;
+    box-sizing: border-box;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    color: grey;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.user_adder_form_button button{
+    height: 55px;
+    width: 170px;
+    border-radius: 7px;
+    border: none;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    color: #000;
+    font-size: 20px;
+    background-color: orange;
+    box-sizing: border-box;
+    
+}
+.user_adder_form_button{
+    justify-self: flex-end;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');

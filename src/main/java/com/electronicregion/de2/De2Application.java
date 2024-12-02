@@ -1,5 +1,6 @@
 package com.electronicregion.de2;
 
+import com.electronicregion.de2.models.DismissedEmpoyeesEntity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
