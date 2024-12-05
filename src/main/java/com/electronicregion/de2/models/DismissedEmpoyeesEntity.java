@@ -2,10 +2,7 @@ package com.electronicregion.de2.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.util.Objects;
 
 @Data
 @Entity
@@ -35,6 +32,7 @@ public class DismissedEmpoyeesEntity {
     @Column(name = "employee_sur_name", nullable = true, length = 255)
     private String employeeSurName;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "regionId")
     private RegionEntity region_id;
 
 

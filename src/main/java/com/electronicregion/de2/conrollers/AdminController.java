@@ -20,11 +20,6 @@ public class AdminController {
         this.employeesRepo = employeesRepo;
     }
 
-
-    //    @GetMapping("/all")
-//    public List<Employee> getAllEmloyees(){
-//        return employeeRepo.findAll();
-//    }
     @GetMapping("")
     public String getAdmin(Model model){
       List<DismissedEmpoyeesEntity> employees = employeesRepo.findAll();

@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
 <body>
+<div class="page-header">
+    <img th:src="@{/images/logo.png}" alt="Логотип" class="logo">
+    <h1 class="title">Реестр учета сотрудников</h1>
+</div>
+<div class="form-container">
+    <form id="form-to-submit" method="POST" action="/login">
+        <h2 class="form-title">Авторизация</h2>
 
-<h2>Login Form</h2>
-<form id="form-to-submit" method="POST"  action="/login/">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    <br>
-    <button type="submit">ok</button>
-</form>
+        <div class="form-group">
+            <input type="text" name="username" id="username" required placeholder="Логин">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" id="password" required placeholder="Пароль">
+        </div>
+        <div class="form-footer">
+            <div class="remember-me">
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label for="remember_me">Запомнить</label>
+            </div>
+            <button type="submit" class="submit-btn">Вход</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
