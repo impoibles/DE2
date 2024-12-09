@@ -14,9 +14,9 @@ public class RegionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "region_id", nullable = false)
-    private long regionId;
+    private long Id;
     @Basic
     @Column(name = "region_name", nullable = false, length = 150)
-    private String regionName;
+    private String Name;
 
 }

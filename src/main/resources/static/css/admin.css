@@ -73,6 +73,7 @@ body{
 }
 .user_seacher_button{
     justify-self: flex-end;
+    margin-top: 30px;
 }
 .user_seacher_button button{
     height: 45px;

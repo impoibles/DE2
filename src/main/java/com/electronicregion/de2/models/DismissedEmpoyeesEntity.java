@@ -12,33 +12,29 @@ public class DismissedEmpoyeesEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "employee_id", nullable = false)
-    private long employeeId;
+    private long Id;
     @Basic
-    @Column(name = "employee_name", nullable = true, length = 255)
-    private String employeeName;
+    @Column(name = "employee_sur_name", nullable = false, length = 255)
+    private String SurName;
     @Basic
-    @Column(name = "employee_number_of_snils", nullable = true)
-    private Long employeeNumberOfSnils;
-    @Basic
-    @Column(name = "employee_organization", nullable = true, length = 255)
-    private String employeeOrganization;
+    @Column(name = "employee_name", nullable = false, length = 255)
+    private String Name;
     @Basic
     @Column(name = "employee_patronymic", nullable = true, length = 255)
-    private String employeePatronymic;
+    private String Patronymic;
     @Basic
-    @Column(name = "employee_reason_of_dismissal", nullable = true, length = 255)
-    private String employeeReasonOfDismissal;
+    @Column(name = "employee_number_of_snils", nullable = false)
+    private Long Snils;
     @Basic
-    @Column(name = "employee_sur_name", nullable = true, length = 255)
-    private String employeeSurName;
+    @Column(name = "employee_organization", nullable = false, length = 255)
+    private String Organization;
+    @Basic
+    @Column(name = "employee_dolhnost", nullable = false, length = 150)
+    private String employeeDolhnost;
+    @Basic
+    @Column(name = "employee_reason_of_dismissal", nullable = false, length = 255)
+    private String ReasonOfDismissal;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "regionId")
     private RegionEntity region_id;
-
-
-    @Basic
-    @Column(name = "employee_dolhnost", nullable = true, length = 150)
-    private String employeeDolhnost;
-
-
 }

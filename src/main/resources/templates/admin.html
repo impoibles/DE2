@@ -13,20 +13,24 @@
     </div>
     <div class="user_seacher_search_field">
         <div class="user_seacher_search">
-            <div class="user_seacher_search_label">
-                <h2>Поисковый запрос</h2>
-            </div>
-            <div class="user_seacher_search_input">
-                <input type="text"/>
-            </div>
+            <form method="get">
+                <div style="display: flex; flex-direction: row; gap: 10px; align-items: center" >
+                    <div class="user_seacher_search_label">
+                        <h2>Поисковый запрос</h2>
+                    </div>
+                    <div class="user_seacher_search_input">
+                        <input type="text" name="parametr" id="parametr"/>
+                    </div>
+                </div>
+                <div class="user_seacher_button">
+                    <button type="submit">Поиск</button>
+                </div>
+            </form>
         </div>
-        <div class="user_seacher_button">
-            <button type="submit">Поиск</button>
-        </div>
+
     </div>
     <div class="user_seacher_table">
-        <div th:if="${employeeRepo.isEmpty()}">No Empoyees</div>
-        <table cellspacing="0" cellpadding="0" th:if="${!employeeRepo.isEmpty()}" >
+        <table th:if="${!employees.isEmpty()}" >
             <tr >
                 <td><p>Муниципальное образование</p></td>
                 <td><p>Организация</p></td>
@@ -35,13 +39,13 @@
                 <td><p>СНИЛС</p></td>
                 <td><p>Причина увольнения</p></td>
             </tr>
-            <tr th:each="emloyee : ${employeeRepo}">
-                <td><p>employee.region_id</p></td>
-                <td><p>employee.employeeOrganization</p></td>
-                <td><p>employee.employeeSurName </br> employee.employeeName + " "+ employee.employeePatronymic</p></td>
-                <td><p>employee.employeeDolhnost</p></td>
-                <td><p>employee.employeeNumberOfSnils</p></td>
-                <td><p>employee.employeeReasonOfDismissal</p></td>
+            <tr th:each="employee : ${employees}">
+                <td><p th:text="${employee.region_id.name}"></p></td>
+                <td><p th:text="${employee.Organization}"></p></td>
+                <td><p th:text="${employee.SurName + ' '+ employee.name + ' ' +employee.patronymic}"></p></td>
+                <td><p th:text="${employee.employeeDolhnost}"></p></td>
+                <td><p th:text="${employee.Snils}"></p></td>
+                <td><p th:text="${employee.ReasonOfDismissal}"></p></td>
             </tr>
         </table>
     </div>

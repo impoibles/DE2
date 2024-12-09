@@ -2,43 +2,45 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" th:href="@{/css/user.css}">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
 <div class="user_adder">
     <div class="user_adder_logo_with_name">
         <div class="user_adder_logo_with_name_logo"><img th:src="@{/images/logo.png}"/></div>
         <div class="user_adder_logo_with_name_name"><h1>Сведения о сотруднике</h1></div>
     </div>
     <div class="user_adder_form">
-        <form method="post">
+        <form id="myForm" method="post" action="/user">
             <div class="user_adder_form_input">
                 <h3>Муниципальное образование </h3>
-                <select name="MO" id="MO"  required>
+                <select name="region_id" id="MO"  required>
                     <option  value="Выберите регион">Выберите регион</option>
-                    <option th:each="region : ${regions}" value=region.regionName>${region.regionName}</option>
+                    <option th:each="region : ${regions}" th:value="${region.id}"  th:text="${region.Name}"></option>
                 </select>
             </div>
             <div class="user_adder_form_input">
                 <h3> Организация </h3>
-                <input type="text" id="organization" required>
+                <input type="text" id="organization" name="Organization" required>
             </div>
             <div class="user_adder_form_input">
                 <h3>ФИО</h3>
-                <input type="text" id="FIO" required>
+                <input type="text" id="FIO" name="FIO" required>
             </div>
             <div class="user_adder_form_input">
                 <h3>Должность</h3>
-                <input type="text" id="Dol" required>
+                <input type="text" id="Dol" name="employeeDolhnost" required>
             </div>
             <div class="user_adder_form_input">
                 <h3>СНИЛС</h3>
-                <input type="number" id="Snils" required>
+                <input type="number" id="Snils" name="Snils" required>
             </div>
             <div class="user_adder_form_input">
                 <h3>Причина увольнения</h3>
-                <input type="text" id="Prichina" required>
+                <input type="text" id="Prichina" name="ReasonOfDismissal" required>
             </div>
             <div class="user_adder_form_button">
                 <button type="submit">Применить</button>
@@ -46,6 +48,6 @@
         </form>
     </div>
 </div>
-
+<!--<script th:src="@{/js/user.js}"></script>-->
 </body>
 </html>
