@@ -52,6 +52,7 @@ form h3 {
 .user_adder_form_input{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .user_adder_form_input input, .user_adder_form_input select{
     width: 800px;
@@ -81,7 +82,13 @@ form h3 {
 .user_adder_form_button{
     justify-self: flex-end;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
